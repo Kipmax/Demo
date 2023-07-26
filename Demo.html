@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>car website demo</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="path/to/font-awesome/css/font-awesome.min.css"
+    />
+
+    <link rel="stylesheet" href="Style.css" />
+    <style>
+      /* Your custom CSS styles here */
+    </style>
+
+    <!-- Correct the script file extension to .js -->
+    <script src="script.js"></script>
+
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        border-radius: 0%;
+      }
+      body {
+        background-color: black;
+      }
+      .Navigation {
+        height: 70px;
+        width: 100%;
+        background-color: rgb(12, 12, 34);
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1;
+      }
+
+      nav {
+        color: aliceblue;
+      }
+      nav ul {
+        list-style: none;
+        float: right;
+        margin-top: 10px;
+        margin-right: 10px;
+      }
+      nav ul li {
+        float: left;
+        margin-left: 10px;
+      }
+
+      .Main1 {
+        margin-top: 75px;
+        border-radius: 10px;
+        border: 1px solid red;
+        width: 60%;
+        height: 100vh;
+        margin-left: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: gray;
+      }
+      .Main1 img {
+        width: 98%;
+        height: 60vh;
+        border-radius: 20px;
+        padding: 13px;
+        padding-right: 13px;
+        padding-top: 8px;
+      }
+      .SubMain {
+        border: 1px solid green;
+        background-color: rgb(40, 41, 41);
+        border-radius: 10px;
+        padding-left: 6px;
+        padding-top: 3px;
+        margin-bottom: 5px;
+        height: 300px;
+        width: 90%;
+        position: relative;
+        justify-content: center;
+        overflow: auto; /* Use 'auto' instead of 'hidden' for the custom scrollbar */
+      }
+
+      /* custom scrollbar */
+      .SubMain::-webkit-scrollbar {
+        width: 4px;
+      }
+      .SubMain::-webkit-scrollbar-thumb {
+        background-color: rgba(250, 248, 248, 0.5);
+        border-radius: 10px;
+        margin-top: 13%;
+      }
+      .SubMain img {
+        /* border: 1px solid pink; */
+        max-height: 60%;
+        border-radius: 10px;
+        margin-block-end: auto;
+        /* margin-top: 0px; */
+        /* margin-left: 0px; */
+        margin: 0;
+        box-sizing: border-box;
+        max-width: 32%;
+        justify-content: center;
+        background-position: center;
+        /* background-size: cover; */
+        background-repeat: no-repeat;
+        overflow: none;
+      }
+      .Main2 {
+        border: 1px solid blue;
+        height: 100vh;
+        width: 38%;
+        float: right;
+        margin-top: -100vh;
+        margin-right: 6px;
+        border-radius: 30px;
+      }
+      .SubMain2 {
+        border: 1px solid rgb(12, 12, 0);
+        height: 30px;
+        margin: 10px auto;
+        border-radius: 30px;
+        width: 95%;
+        box-sizing: border-box;
+        display: flex;
+      }
+
+      .SubMain2 input {
+        text-align: center;
+        font-size: 20px;
+        margin-left: 3px;
+        margin-top: 1px;
+        margin-bottom: 1px;
+        border: 1px solid orange;
+        border-radius: 30px;
+        width: 60%;
+      }
+      .select {
+        border: 1px solid purple;
+        border-radius: 30px;
+        width: 30%;
+        margin-top: 1px;
+        margin-bottom: 1px;
+        margin-left: 1px;
+      }
+      .select select {
+        height: 100%;
+        border-radius: 30px;
+      }
+
+      .SearchBox {
+        border: 1px solid green;
+        border-radius: 50%;
+        width: 6.6%;
+        margin-right: 5px;
+        margin-left: 2px;
+        margin-top: 1px;
+        margin-bottom: 1px;
+      }
+      .search-icon {
+        width: 100%;
+        height: 100%;
+        background-color: #ecc9c9;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      /* Adjust the icon size and color as per your requirement */
+      .search-icon i {
+        font-size: 24px;
+        color: #0c0c0c;
+      }
+      .label-container{
+        border: 1px solid orangered;
+        height: 80px;
+        margin: 5px;
+        /* overflow: hidden; */
+        
+      }
+      .pointer{
+        
+        /* margin-left: 10px; */
+        border: 1px solid yellow;
+        height:89%;
+        width: 29%;
+        margin-top: 3px;
+        margin-left: 3px;
+        margin-bottom: 5px;
+      }
+      .car-id {
+        border: 1px solid red;
+        box-sizing: border-box;
+        height: 90%;
+        width: 68%;
+        margin-top: -79px;
+        float: right;
+        margin-right: 3px;
+        overflow: none;
+        padding-top: 6px;
+        padding-bottom: 8px;
+        background-color: rgb(241, 238, 238);
+      }
+      #car-type {
+        border: 1px solid rgb(16, 214, 228);
+        height: 50%;
+        width: 80%;
+        border-bottom: 2px;
+        margin: 5px;
+      }
+      #model-number {
+        border: 1px solid rgb(2, 249, 84);
+        height: 50%;
+        width: 80%;
+        border-top: 2px;
+        margin: 5px;
+        float: right;
+      }
+      #car-type h1 {
+        color: red;
+      }
+      #model-number h1 {
+        color: red;
+        text-align: right;
+      }
+      .description-container{
+        margin-top:10px;
+        border: 1px solid red;
+        height: 350px;
+        margin: 5px;
+        border-radius: 5px;
+        
+      }
+      .description-container h1{
+        color: white;
+        text-align: right;
+        font-size: 20px;
+        margin-right:5px;
+      }
+      .description-box{
+        border: 1px solid green;
+        height: 90%;
+        margin: 3px;
+        border-radius: 5px;
+        overflow: auto;
+      }
+    </style>
+    <script>
+      function handleSearch() {
+        // Get the input element from the SubMain2 div
+        const inputElement = document.querySelector(".SubMain2 input");
+        const searchValue = inputElement.value;
+        // Perform the search logic here (e.g., navigate to search results page, show search results, etc.)
+        alert(`Searching for: ${searchValue}`);
+      }
+    </script>
+  </head>
+  <body>
+    <div class="Navigation">
+      <nav>
+        <ul>
+          <!-- Use anchor tags for navigation links -->
+          <li>
+            <a href="Home.html" style="color: white; text-decoration: none"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a href="About.html" style="color: white; text-decoration: none"
+              >About</a
+            >
+          </li>
+          <li>
+            <a href="Info.html" style="color: white; text-decoration: none"
+              >Info</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="Main1">
+      <img src="images/Ferrarri/Display.jpg" alt="A Ferrarri" />
+      <div class="SubMain">
+        <img src="images/Ferrarri/ferrarri1.jpg" alt="first image" />
+        <img src="images/Ferrarri/ferrarri2.jpg" alt="first image" />
+        <img src="images/Ferrarri/ferrarri3.jpg" alt="first image" />
+        <img src="images/Ferrarri/ferrarri4.jpg" alt="first image" />
+        <img src="images/Ferrarri/ferrarri5.jpg" alt="first image" />
+        <img src="images/Ferrarri/ferrarri1.jpg" alt="first image" />
+        <img src="images/Ferrarri/ferrarri1.jpg" alt="first image" />
+        <img src="images/Ferrarri/ferrarri2.jpg" alt="first image" />
+        <img src="images/Ferrarri/ferrarri3.jpg" alt="first image" />
+        <img src="images/Ferrarri/ferrarri4.jpg" alt="first image" />
+        <img src="images/Ferrarri/ferrarri5.jpg" alt="first image" />
+        <img src="images/Ferrarri/ferrarri1.jpg" alt="first image" />
+        <img src="images/Ferrarri/ferrarri1.jpg" alt="first image" />
+        <img src="images/Ferrarri/ferrarri2.jpg" alt="first image" />
+        <img src="images/Ferrarri/ferrarri3.jpg" alt="first image" />
+        <img src="images/Ferrarri/ferrarri4.jpg" alt="first image" />
+        <img src="images/Ferrarri/ferrarri5.jpg" alt="first image" />
+        <img src="images/Ferrarri/ferrarri1.jpg" alt="first image" />
+        <img src="images/Ferrarri/ferrarri1.jpg" alt="first image" />
+        <img src="images/Ferrarri/ferrarri2.jpg" alt="first image" />
+        <img src="images/Ferrarri/ferrarri3.jpg" alt="first image" />
+        <img src="images/Ferrarri/ferrarri4.jpg" alt="first image" />
+        <img src="images/Ferrarri/ferrarri5.jpg" alt="first image" />
+        <img src="images/Ferrarri/ferrarri1.jpg" alt="first image" />
+      </div>
+    </div>
+    <!-- The updated script to allow both custom scrollbar and default scrolling behavior -->
+    <script>
+      const subMain = document.querySelector(".SubMain");
+      let isMouseDown = false;
+      let startY;
+      let startScrollTop;
+
+      subMain.addEventListener("mousedown", function (e) {
+        isMouseDown = true;
+        startY = e.pageY;
+        startScrollTop = subMain.scrollTop;
+      });
+      window.addEventListener("mousemove", function (e) {
+        if (!isMouseDown) return;
+        const diffY = e.pageY - startY;
+        subMain.scrollTop = startScrollTop - diffY;
+      });
+
+      window.addEventListener("mouseup", function () {
+        isMouseDown = false;
+      });
+    </script>
+    <div class="Main2">
+      <div class="SubMain2">
+        <input type="text" placeholder="Choose the Car you like!" />
+        <div class="select">
+          <select name="format" id="format">
+            <option selected disabled>Choose Car type</option>
+            <option value="Toyota">Toyota</option>
+            <option value="Nissan">Nissan</option>
+            <option value="Ferrarri">Ferrarri</option>
+            <option value="Lamborghini">Lamborghini</option>
+          </select>
+        </div>
+        <div class="SearchBox">
+          <div class="search-icon" onclick="handleSearch()">
+            <a href=""><span class="fa fa-search" aria-hidden="true"></span></a>
+          </div>
+        </div>
+      </div>
+      <div class="label-container">
+        <div class="pointer">
+            <span class=" fa fa-arrow" aria-hidden="true"></span>
+        </div>
+        <div class="car-id">
+            <div id="car-type">
+              <h1>Type</h1>
+            </div>
+            <div id="model-number">
+              <h1>Model</h1>
+            </div>
+            </div>
+        </div>
+        <div class="description-container">
+            <h1>Vehicle Description</h1>
+            <div class="description-box">
+                <p style="color: white;">sbhjcvb jbfga uilHBVYUKERACNINBVHF GUAIw hfbcJKNi ajonrjb uitgvncjf buivhbn</p>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
